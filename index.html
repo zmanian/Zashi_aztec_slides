@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zashi - End User Zcash Wallet</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/theme/black.css">
+    <style>
+        .reveal h1, .reveal h2, .reveal h3 {
+            text-transform: none;
+        }
+        .reveal section img {
+            border: none;
+            box-shadow: none;
+            background: none;
+        }
+        .reveal .highlight {
+            color: #42b983;
+        }
+        .reveal .address-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .reveal .pros-cons {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        .reveal .pros-cons > div {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .reveal ul {
+            font-size: 0.9em;
+        }
+        .reveal .small-text {
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Title Slide -->
+            <section data-background-gradient="linear-gradient(to bottom, #1a1a2e, #16213e)">
+                <h1>🔒 Zashi</h1>
+                <h3>Your Gateway to Private Digital Money</h3>
+                <p>End User Zcash Wallet Guide</p>
+                <img src="https://raw.githubusercontent.com/zcash/zashi/main/assets/icon.png"
+                     alt="Zashi Logo"
+                     style="width: 200px; margin-top: 30px;"
+                     onerror="this.style.display='none'">
+            </section>
+
+            <!-- What is Zashi? -->
+            <section>
+                <h2>What is Zashi?</h2>
+                <ul>
+                    <li>📱 User-friendly Zcash wallet</li>
+                    <li>🔐 Privacy-first mobile app</li>
+                    <li>💰 Send and receive ZEC with full shielding</li>
+                    <li>🌍 Available on iOS and Android</li>
+                </ul>
+                <p class="small-text" style="margin-top: 40px;">
+                    Zashi makes private cryptocurrency accessible to everyone
+                </p>
+            </section>
+
+            <!-- Section 1: Getting Started -->
+            <section data-background-color="#16213e">
+                <h1>1. Getting Started</h1>
+            </section>
+
+            <!-- T-Addresses vs U-Addresses -->
+            <section>
+                <h2>Address Types: T vs U</h2>
+                <div class="pros-cons">
+                    <div>
+                        <h3>T-Addresses (Transparent)</h3>
+                        <p style="font-size: 0.7em; color: #888;">Start with "t1..."</p>
+                        <ul style="font-size: 0.75em;">
+                            <li>❌ No privacy</li>
+                            <li>✅ Visible on blockchain</li>
+                            <li>✅ Works with exchanges</li>
+                            <li>✅ Lower fees</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>U-Addresses (Unified)</h3>
+                        <p style="font-size: 0.7em; color: #888;">Start with "u1..."</p>
+                        <ul style="font-size: 0.75em;">
+                            <li>✅ <strong>Full privacy</strong></li>
+                            <li>✅ Shielded transactions</li>
+                            <li>✅ Hides amounts & sender</li>
+                            <li>✅ <strong>Recommended!</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- When to Use T-Addresses -->
+            <section>
+                <h2>When to Use T-Addresses</h2>
+                <div class="address-box">
+                    <h3>✅ Use T-Addresses For:</h3>
+                    <ul>
+                        <li>🏦 <strong>Exchange deposits/withdrawals</strong></li>
+                        <li>📊 Receiving from services that don't support shielded</li>
+                        <li>🔄 Temporary holding before shielding</li>
+                        <li>💸 When sender only supports transparent</li>
+                    </ul>
+                </div>
+                <p class="small-text highlight" style="margin-top: 30px;">
+                    ⚠️ Always shield (move to U-address) as soon as possible for privacy!
+                </p>
+            </section>
+
+            <!-- Viewing Keys -->
+            <section>
+                <h2>🔑 What are Viewing Keys?</h2>
+                <ul>
+                    <li>👁️ <strong>View-only access</strong> to your shielded transactions</li>
+                    <li>🔒 Can see balances & history, but <strong>cannot spend</strong></li>
+                    <li>📊 Perfect for accountants, auditors, or tax compliance</li>
+                    <li>🛡️ Share transaction data without risking funds</li>
+                </ul>
+                <div class="address-box" style="margin-top: 30px;">
+                    <p class="small-text">
+                        <strong>Use case:</strong> Give your accountant a viewing key to see transactions
+                        for tax purposes without giving them spending power
+                    </p>
+                </div>
+            </section>
+
+            <!-- Viewing Keys Types -->
+            <section>
+                <h2>Types of Viewing Keys</h2>
+                <div class="pros-cons">
+                    <div>
+                        <h3>Full Viewing Key (FVK)</h3>
+                        <ul style="font-size: 0.8em;">
+                            <li>See all incoming & outgoing</li>
+                            <li>View full transaction history</li>
+                            <li>Complete transparency</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Incoming Viewing Key (IVK)</h3>
+                        <ul style="font-size: 0.8em;">
+                            <li>Only see received funds</li>
+                            <li>Outgoing hidden</li>
+                            <li>More selective privacy</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Using Zashi -->
+            <section data-background-color="#16213e">
+                <h1>2. Using Zashi</h1>
+            </section>
+
+            <!-- Getting from USDC/BTC to ZEC -->
+            <section>
+                <h2>From USDC/BTC to ZEC</h2>
+                <div style="text-align: left; max-width: 800px; margin: 0 auto;">
+                    <h3 class="highlight">Option 1: Centralized Exchanges</h3>
+                    <ol style="font-size: 0.85em;">
+                        <li>Send USDC/BTC to exchange (Coinbase, Kraken, Binance)</li>
+                        <li>Trade for ZEC</li>
+                        <li>Withdraw to your Zashi t-address</li>
+                        <li>Shield to u-address in Zashi</li>
+                    </ol>
+
+                    <h3 class="highlight" style="margin-top: 30px;">Option 2: DEX/Swaps</h3>
+                    <ol style="font-size: 0.85em;">
+                        <li>Use SideShift.ai, ChangeNow, or similar</li>
+                        <li>Swap BTC/USDC directly to ZEC</li>
+                        <li>Receive to Zashi u-address</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- DEX Examples -->
+            <section>
+                <h2>🔄 Swap Services</h2>
+                <div class="address-box">
+                    <h3>Popular Non-KYC Options:</h3>
+                    <ul>
+                        <li>🦊 <strong>SideShift.ai</strong> - No account needed</li>
+                        <li>⚡ <strong>ChangeNow</strong> - Fast swaps</li>
+                        <li>🔐 <strong>StealthEX</strong> - Privacy-focused</li>
+                        <li>🌐 <strong>Exolix</strong> - Multiple pairs</li>
+                    </ul>
+                </div>
+                <p class="small-text" style="margin-top: 20px;">
+                    ⚠️ Always verify you're on the official site - phishing is common!
+                </p>
+            </section>
+
+            <!-- Paying Someone Who Doesn't Want ZEC -->
+            <section>
+                <h2>Paying Without ZEC</h2>
+                <h3 class="highlight">When recipient wants BTC/USDC/fiat</h3>
+                <div style="text-align: left; max-width: 800px; margin: 0 auto;">
+                    <h4>Step 1: Convert ZEC</h4>
+                    <ul style="font-size: 0.8em;">
+                        <li>Unshield ZEC to t-address (if needed)</li>
+                        <li>Send to exchange or swap service</li>
+                        <li>Convert to BTC, USDC, or other crypto</li>
+                    </ul>
+
+                    <h4 style="margin-top: 20px;">Step 2: Send to Recipient</h4>
+                    <ul style="font-size: 0.8em;">
+                        <li>Withdraw to their address</li>
+                        <li>Or use payment processor (BitPay, etc.)</li>
+                    </ul>
+                </div>
+                <p class="small-text highlight" style="margin-top: 30px;">
+                    💡 <strong>Pro tip:</strong> Use instant swap services for quick conversions
+                </p>
+            </section>
+
+            <!-- Payment Workflow -->
+            <section>
+                <h2>Payment Workflow Example</h2>
+                <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; font-size: 0.85em;">
+                    <p><strong>Scenario:</strong> Pay $100 to someone who wants USDC</p>
+                    <ol style="text-align: left; max-width: 700px; margin: 20px auto;">
+                        <li>Check ZEC price (~$28 per ZEC)</li>
+                        <li>Send ~3.6 ZEC from Zashi to SideShift</li>
+                        <li>Specify recipient's USDC address</li>
+                        <li>SideShift converts & sends ~100 USDC</li>
+                        <li>Done! ✅</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Section 3: Advanced -->
+            <section data-background-color="#16213e">
+                <h1>3. Advanced Topics</h1>
+            </section>
+
+            <!-- Choosing RPCs -->
+            <section>
+                <h2>🌐 What are RPCs?</h2>
+                <p><strong>Remote Procedure Call</strong> servers</p>
+                <ul>
+                    <li>🔗 Connect your wallet to the Zcash blockchain</li>
+                    <li>📡 Relay transactions and fetch data</li>
+                    <li>🏛️ Can be run by you or trusted third parties</li>
+                </ul>
+                <div class="address-box" style="margin-top: 30px;">
+                    <p class="small-text">
+                        Your RPC choice affects speed, privacy, and reliability
+                    </p>
+                </div>
+            </section>
+
+            <!-- RPC Latency -->
+            <section>
+                <h2>⚡ RPC Selection: Latency</h2>
+                <div class="pros-cons">
+                    <div>
+                        <h3>Low Latency Matters For:</h3>
+                        <ul style="font-size: 0.75em;">
+                            <li>Fast transaction broadcast</li>
+                            <li>Quick balance updates</li>
+                            <li>Smooth app experience</li>
+                            <li>Real-time sync</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>How to Choose:</h3>
+                        <ul style="font-size: 0.75em;">
+                            <li>🌍 Geographic proximity</li>
+                            <li>⚡ Ping/response time</li>
+                            <li>📊 Uptime/reliability</li>
+                            <li>🔄 Load balancing</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="small-text highlight" style="margin-top: 30px;">
+                    Zashi usually auto-selects good defaults
+                </p>
+            </section>
+
+            <!-- RPC Testing -->
+            <section>
+                <h2>Testing RPC Latency</h2>
+                <div style="background: #1a1a1a; padding: 20px; border-radius: 10px; font-family: monospace; font-size: 0.7em; text-align: left;">
+                    <p style="color: #42b983;"># Test RPC response time</p>
+                    <p>curl -X POST https://rpc.example.com \</p>
+                    <p>  -H "Content-Type: application/json" \</p>
+                    <p>  -d '{"jsonrpc":"2.0","method":"getinfo","id":1}' \</p>
+                    <p>  -w "Time: %{time_total}s\n"</p>
+                </div>
+                <p class="small-text" style="margin-top: 20px;">
+                    Aim for &lt;500ms for best experience
+                </p>
+            </section>
+
+            <!-- IP Privacy and Tor -->
+            <section>
+                <h2>🕵️ IP Privacy: Why It Matters</h2>
+                <ul>
+                    <li>🔍 RPC servers can see your <strong>IP address</strong></li>
+                    <li>📍 IP can reveal your location</li>
+                    <li>🔗 Could correlate IP with transaction patterns</li>
+                    <li>⚠️ Even with shielded transactions, metadata leaks exist</li>
+                </ul>
+                <div class="address-box" style="margin-top: 30px;">
+                    <p class="highlight"><strong>Solution: Use Tor</strong></p>
+                </div>
+            </section>
+
+            <!-- Using Tor -->
+            <section>
+                <h2>🧅 Using Tor with Zashi</h2>
+                <div style="text-align: left; max-width: 750px; margin: 0 auto;">
+                    <h3 class="highlight">Benefits:</h3>
+                    <ul style="font-size: 0.85em;">
+                        <li>🌐 Hides your real IP from RPC servers</li>
+                        <li>🔒 Routes through encrypted relays</li>
+                        <li>🎭 Adds anonymity layer</li>
+                        <li>🛡️ Protects against network surveillance</li>
+                    </ul>
+
+                    <h3 class="highlight" style="margin-top: 25px;">Trade-offs:</h3>
+                    <ul style="font-size: 0.85em;">
+                        <li>🐌 Slower connection (higher latency)</li>
+                        <li>⚠️ Requires Tor setup/Orbot on mobile</li>
+                        <li>🔄 Some RPCs may block Tor exits</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Setting Up Tor -->
+            <section>
+                <h2>Setting Up Tor</h2>
+                <div style="text-align: left; max-width: 800px; margin: 0 auto; font-size: 0.85em;">
+                    <h3 class="highlight">On Android:</h3>
+                    <ol>
+                        <li>Install <strong>Orbot</strong> from F-Droid or Play Store</li>
+                        <li>Start Orbot and enable VPN mode</li>
+                        <li>Configure Zashi to use Tor proxy (if supported)</li>
+                    </ol>
+
+                    <h3 class="highlight" style="margin-top: 25px;">On iOS:</h3>
+                    <ol>
+                        <li>Install <strong>Onion Browser</strong> or similar</li>
+                        <li>Use VPN-based Tor apps</li>
+                        <li>Check Zashi settings for proxy support</li>
+                    </ol>
+                </div>
+                <p class="small-text" style="margin-top: 20px; color: #888;">
+                    Note: Check Zashi documentation for current Tor support status
+                </p>
+            </section>
+
+            <!-- RPC Best Practices -->
+            <section>
+                <h2>🎯 RPC Best Practices</h2>
+                <div class="address-box">
+                    <h3>Recommendations:</h3>
+                    <ul style="font-size: 0.85em;">
+                        <li>🏠 <strong>Run your own node</strong> (best privacy & control)</li>
+                        <li>🔐 Use trusted, well-known RPC providers</li>
+                        <li>🧅 Enable Tor for maximum privacy</li>
+                        <li>🔄 Rotate between multiple RPCs</li>
+                        <li>📊 Monitor for downtime/issues</li>
+                        <li>⚡ Balance speed vs. privacy based on needs</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Privacy Layers -->
+            <section>
+                <h2>🛡️ Complete Privacy Stack</h2>
+                <div style="font-size: 0.85em;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr style="background: rgba(66, 185, 131, 0.2);">
+                            <td style="padding: 15px; border: 1px solid #333;"><strong>Layer</strong></td>
+                            <td style="padding: 15px; border: 1px solid #333;"><strong>Protection</strong></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; border: 1px solid #333;">U-Addresses</td>
+                            <td style="padding: 15px; border: 1px solid #333;">Hides transaction details</td>
+                        </tr>
+                        <tr style="background: rgba(255, 255, 255, 0.03);">
+                            <td style="padding: 15px; border: 1px solid #333;">Viewing Keys</td>
+                            <td style="padding: 15px; border: 1px solid #333;">Controlled disclosure</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; border: 1px solid #333;">Tor/VPN</td>
+                            <td style="padding: 15px; border: 1px solid #333;">Hides IP address</td>
+                        </tr>
+                        <tr style="background: rgba(255, 255, 255, 0.03);">
+                            <td style="padding: 15px; border: 1px solid #333;">Self-hosted RPC</td>
+                            <td style="padding: 15px; border: 1px solid #333;">No third-party metadata</td>
+                        </tr>
+                    </table>
+                </div>
+                <p class="highlight" style="margin-top: 30px;">
+                    🎯 Layer them all for maximum privacy!
+                </p>
+            </section>
+
+            <!-- Quick Reference -->
+            <section>
+                <h2>📚 Quick Reference</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 0.75em;">
+                    <div class="address-box">
+                        <h4>🏁 Getting Started</h4>
+                        <p>Use U-addresses for privacy<br>
+                        T-addresses only for exchanges<br>
+                        Shield funds ASAP</p>
+                    </div>
+                    <div class="address-box">
+                        <h4>💱 Converting</h4>
+                        <p>Use swap services<br>
+                        Or centralized exchanges<br>
+                        Always verify URLs</p>
+                    </div>
+                    <div class="address-box">
+                        <h4>🔑 Viewing Keys</h4>
+                        <p>Share for audits<br>
+                        View-only access<br>
+                        Cannot spend funds</p>
+                    </div>
+                    <div class="address-box">
+                        <h4>🌐 RPC Selection</h4>
+                        <p>Consider latency<br>
+                        Use Tor for privacy<br>
+                        Self-host if possible</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resources -->
+            <section>
+                <h2>🔗 Resources</h2>
+                <div style="text-align: left; max-width: 700px; margin: 0 auto; font-size: 0.85em;">
+                    <ul>
+                        <li>🌐 <strong>Zashi Wallet:</strong> zashi.app</li>
+                        <li>📖 <strong>Zcash Documentation:</strong> z.cash</li>
+                        <li>💬 <strong>Zcash Community Forum:</strong> forum.zcashcommunity.com</li>
+                        <li>🐦 <strong>Follow Updates:</strong> @zcash on X/Twitter</li>
+                        <li>🔐 <strong>Privacy Guide:</strong> electriccoin.co/privacy</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Thank You -->
+            <section data-background-gradient="linear-gradient(to bottom, #16213e, #1a1a2e)">
+                <h1>Thank You! 🎉</h1>
+                <h3>Start Your Privacy Journey with Zashi</h3>
+                <p style="margin-top: 40px;">
+                    <span class="highlight">Questions?</span>
+                </p>
+                <p style="font-size: 0.8em; margin-top: 40px; color: #888;">
+                    Use arrow keys or swipe to navigate • Press 'F' for fullscreen • Press 'S' for speaker notes
+                </p>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            center: true,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            slideNumber: true,
+            progress: true,
+            controls: true,
+            controlsLayout: 'bottom-right',
+            width: 1280,
+            height: 720,
+            margin: 0.1,
+            minScale: 0.2,
+            maxScale: 2.0
+        });
+    </script>
+</body>
+</html>
