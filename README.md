@@ -12,8 +12,8 @@ A comprehensive reveal.js slide deck covering Zashi wallet usage and Zcash priva
 - Compliance without backdoors
 
 ### 2. Using Zashi
-- **NEAR Intents Integration**: $800M monthly volume, 120K users, 1000+ assets
-- **Zashi Swap Deposit**: No-KYC on-ramp (0.2-0.5% fees)
+- **NEAR Intents Integration**: $3B monthly volume, $5.3B all-time, 1000+ assets
+- **Zashi Swap Deposit**: No-KYC on-ramp (0.2-0.5% fees), $6.4M daily via Zashi
 - **CrossPay**: Pay anyone in any cryptocurrency from shielded ZEC
 - **Flexa Integration**: Spend at thousands of retail locations (1-2% fees)
 - Traditional CEX vs decentralized swaps comparison
@@ -128,8 +128,9 @@ To deploy online:
 
 ## 📊 Key Statistics Covered
 
-- **$800M**: NEAR Intents monthly swap volume
-- **120K+**: Active NEAR Intents users
+- **$5.3B**: NEAR Intents all-time volume
+- **$3B**: NEAR Intents monthly swap volume (30-day)
+- **$6.4M**: Daily Zashi volume via NEAR Intents
 - **1000+**: Cryptocurrencies supported in swaps
 - **0.2-0.5%**: CrossPay swap fees
 - **90%+**: Bandwidth savings via lightwalletd
