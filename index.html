@@ -62,6 +62,34 @@
             border-radius: 5px;
             font-size: 0.85em;
         }
+        /* Compact slide styling for content-heavy slides */
+        .reveal section.compact {
+            font-size: 0.9em;
+        }
+        .reveal section.compact h2 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+        .reveal section.compact h3 {
+            font-size: 1.1em;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        .reveal section.compact ol,
+        .reveal section.compact ul {
+            margin: 10px 0;
+        }
+        .reveal section.compact li {
+            margin: 5px 0;
+        }
+        .reveal section.compact p {
+            margin: 10px 0;
+        }
+        /* Ensure slides can scroll if needed */
+        .reveal .slides section {
+            overflow-y: auto !important;
+            max-height: 720px;
+        }
     </style>
 </head>
 <body>
@@ -240,7 +268,7 @@
             </section>
 
             <!-- Viewing Keys in Zashi -->
-            <section>
+            <section class="compact">
                 <h2>Viewing Keys in Zashi</h2>
                 <div style="text-align: left; max-width: 800px; margin: 0 auto;">
                     <h3 class="zcash-yellow">How to Export:</h3>
@@ -275,7 +303,7 @@
             </section>
 
             <!-- NEAR Intents Integration -->
-            <section>
+            <section class="compact">
                 <h2>🚀 Zashi Swap Deposit</h2>
                 <p class="zcash-yellow"><strong>Revolutionary No-KYC On-Ramp via NEAR Intents</strong></p>
                 <div class="stat-box">
@@ -544,7 +572,7 @@
             </section>
 
             <!-- RPC Configuration in Zashi -->
-            <section>
+            <section class="compact">
                 <h2>Configuring RPC in Zashi</h2>
                 <div style="text-align: left; max-width: 800px; margin: 0 auto;">
                     <h3 class="zcash-yellow">Automatic Selection (Recommended):</h3>
@@ -600,7 +628,7 @@
             </section>
 
             <!-- Arti: Tor in Zashi -->
-            <section>
+            <section class="compact">
                 <h2>🧅 Arti: Native Tor in Zashi</h2>
                 <p class="zcash-yellow"><strong>Built-in Tor via Rust implementation</strong></p>
                 <div class="stat-box">
