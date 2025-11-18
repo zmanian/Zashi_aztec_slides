@@ -601,98 +601,56 @@
                 </aside>
             </section>
 
-            <!-- Tor and Network Privacy -->
-            <section>
-                <h2>🕵️ Why Network-Layer Privacy Matters</h2>
-                <p class="zcash-yellow"><strong>Two-layer privacy: Cryptographic + Network</strong></p>
-                <div class="address-box">
-                    <h3>The Problem:</h3>
-                    <ul style="font-size: 0.85em;">
-                        <li>🔍 Zcash's cryptography hides transaction details (amounts, addresses, memos)</li>
-                        <li>📍 <strong>But your IP address is visible</strong> to RPC servers & network observers</li>
-                        <li>🔗 IP metadata reveals: location, usage patterns, transaction timing</li>
-                        <li>⚠️ Historical vulnerability: <span class="tech-detail">CVE-2019-16930</span> demonstrated these risks</li>
-                    </ul>
-                </div>
-                <p class="highlight" style="margin-top: 30px;">
-                    🎯 <strong>Privacy requires both cryptographic shielding AND network obfuscation</strong>
-                </p>
-                <aside class="notes">
-                    While Zcash provides world-class cryptographic privacy hiding transaction details, without
-                    network-layer protection your IP address becomes a critical fingerprint linking ostensibly
-                    private transactions. Network observers can correlate transactions by identifying which node
-                    first broadcasts them - revealing identity, location, and usage patterns. Zcash's peer-to-peer
-                    layer doesn't natively obfuscate IP addresses. Historical vulnerability CVE-2019-16930
-                    demonstrated these risks. Privacy requires both cryptographic shielding AND network obfuscation.
-                </aside>
-            </section>
-
-            <!-- Arti: Tor in Zashi -->
+            <!-- Tor Network Privacy -->
             <section class="compact">
-                <h2>🧅 Arti: Native Tor in Zashi</h2>
-                <p class="zcash-yellow"><strong>Built-in Tor via Rust implementation</strong></p>
-                <div class="stat-box">
-                    $670,000 funding from Zcash Community Grants
-                </div>
-                <div style="text-align: left; max-width: 800px; margin: 0 auto; margin-top: 30px;">
-                    <h3 class="highlight">What is Arti?</h3>
-                    <ul style="font-size: 0.85em;">
-                        <li>🦀 <strong>Pure Rust Tor implementation</strong> (memory-safe, mobile-optimized)</li>
-                        <li>📱 Embedded directly in Zashi - no external setup required!</li>
-                        <li>🔒 Routes ALL traffic through Tor's 3-hop circuit</li>
-                        <li>🌐 Covers: transactions, blockchain sync, NEAR Intents swaps, exchange rates</li>
-                    </ul>
+                <h2>🧅 Tor Network Privacy with Arti</h2>
+                <p class="zcash-yellow"><strong>Complete privacy requires both cryptographic shielding AND network obfuscation</strong></p>
 
-                    <h3 class="highlight" style="margin-top: 25px;">How to Enable:</h3>
-                    <ol style="font-size: 0.85em;">
-                        <li>Open Zashi → <strong>Settings → Advanced Settings</strong></li>
-                        <li>Enable <strong>Tor Network Protection</strong></li>
-                        <li>That's it! One-click activation</li>
-                    </ol>
-                </div>
-                <aside class="notes">
-                    Zashi's Tor integration (beta) was introduced in version 2.1 via Arti - a pure Rust implementation
-                    funded by $670,000 from Zcash Community Grants. Enable via Settings → Advanced Settings → Tor
-                    Network Protection. No external setup required; Zashi includes the Tor client natively. All traffic -
-                    transaction submission, blockchain sync, NEAR Intents swaps, exchange rate fetching - automatically
-                    routes through Tor's 3-hop circuit, hiding your IP from all network participants.
-                </aside>
-            </section>
-
-            <!-- Tor Trade-offs -->
-            <section>
-                <h2>Tor: Performance Trade-offs</h2>
-                <div class="pros-cons">
-                    <div>
-                        <h3 class="zcash-yellow">Benefits</h3>
-                        <ul style="font-size: 0.8em;">
-                            <li>✅ Hides IP from all network participants</li>
-                            <li>✅ Prevents timing correlation attacks</li>
-                            <li>✅ Defense-in-depth architecture</li>
-                            <li>✅ Completes Zcash's privacy promise</li>
-                            <li>✅ Essential for privacy-critical users</li>
+                <div style="display: flex; gap: 20px; margin-top: 20px;">
+                    <div style="flex: 1;">
+                        <h3 class="highlight" style="font-size: 1em;">Why It Matters</h3>
+                        <ul style="font-size: 0.75em;">
+                            <li>🔍 Your IP reveals location & usage patterns</li>
+                            <li>📍 Network observers can correlate transactions</li>
+                            <li>⚠️ CVE-2019-16930 demonstrated IP risks</li>
                         </ul>
                     </div>
-                    <div>
-                        <h3 class="zcash-yellow">Trade-offs</h3>
-                        <ul style="font-size: 0.8em;">
+
+                    <div style="flex: 1;">
+                        <h3 class="highlight" style="font-size: 1em;">Arti Solution</h3>
+                        <ul style="font-size: 0.75em;">
+                            <li>🦀 Pure Rust Tor ($670K ZCG funding)</li>
+                            <li>📱 Built-in, one-click activation</li>
+                            <li>🔒 Routes ALL traffic through 3-hop circuit</li>
+                        </ul>
+                    </div>
+
+                    <div style="flex: 1;">
+                        <h3 class="highlight" style="font-size: 1em;">Trade-offs</h3>
+                        <ul style="font-size: 0.75em;">
                             <li>⏱️ 3-5x latency increase</li>
-                            <li>⏱️ 30-90s initial circuit establishment</li>
-                            <li>⚠️ Beta status (active development)</li>
-                            <li>📊 Auto-monitored performance</li>
-                            <li>🔔 User prompts if severe issues detected</li>
+                            <li>✅ Essential for complete privacy</li>
+                            <li>🔔 Auto-monitored (beta)</li>
                         </ul>
                     </div>
                 </div>
-                <p class="highlight" style="margin-top: 30px;">
-                    🎯 <strong>ECC strongly recommends enabling Tor for complete privacy</strong>
+
+                <div class="address-box" style="margin-top: 20px;">
+                    <strong>Enable:</strong> Settings → Advanced Settings → Tor Network Protection
+                </div>
+
+                <p class="highlight" style="margin-top: 15px; font-size: 0.85em;">
+                    🎯 <strong>ECC strongly recommends enabling Tor for defense-in-depth privacy</strong>
                 </p>
+
                 <aside class="notes">
-                    Trade-offs: Expect 3-5x latency increase with 30-90 second initial circuit establishment,
-                    though subsequent requests are faster. Zashi monitors performance automatically and prompts
-                    if severe issues detected. For privacy-critical users, this trade-off is essential - completing
-                    Zcash's privacy promise with defense-in-depth architecture. Currently in beta status with active
-                    development and rapid improvements. ECC strongly recommends enabling it for true network-layer privacy.
+                    While Zcash provides world-class cryptographic privacy, your IP address can still reveal identity,
+                    location, and usage patterns to network observers. CVE-2019-16930 demonstrated these risks. Zashi
+                    solves this with Arti - a pure Rust Tor implementation ($670K Zcash Community Grant funding) built
+                    directly into the app. One-click enable via Settings → Advanced Settings → Tor Network Protection.
+                    All traffic routes through Tor's 3-hop circuit. Trade-off: 3-5x latency increase (30-90s initial
+                    circuit), but essential for true privacy. Currently in beta with auto-monitoring. ECC strongly
+                    recommends enabling it to complete Zcash's defense-in-depth privacy architecture.
                 </aside>
             </section>
 
